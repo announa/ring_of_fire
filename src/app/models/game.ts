@@ -1,5 +1,3 @@
-import { ThrowStmt } from "@angular/compiler";
-
 export class Game{
  stack: string[] = [];
  playedCards: string[] = [];

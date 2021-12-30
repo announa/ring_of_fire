@@ -11,13 +11,16 @@ export class GameComponent implements OnInit {
   currentCard: string = '';
   cardPicked= false;
   constructor() { 
-    this.game = new Game;
+    this.game = new Game();
+    console.log(this.game)
   }
 
   ngOnInit(): void {
   }
 
   takeCard(){
+    console.log(typeof(this.game.stack.pop()))
+    debugger;
     this.currentCard = this.game.stack.pop();
     this.cardPicked = true;
   }
