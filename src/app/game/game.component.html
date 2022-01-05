@@ -1,3 +1,5 @@
+<app-player [game]="game" class="player-panel"></app-player>
+
 <div class="field flex">
   <div class="stack card-size">
     <img
@@ -6,7 +8,19 @@
       class="card"
       src="assets/img/playing_cards/card_cover.png"
     />
-    <img src="assets/img/playing_cards/card_cover.png" class="top-card card-size" [class.top-card--hover]="!cardPicked" (click)="takeCard()">
+    <img
+      src="assets/img/playing_cards/card_cover.png"
+      class="top-card card-size"
+      [class.top-card--hover]="!cardPicked"
+      (click)="takeCard()"
+    />
+    <img
+      *ngFor="let card of game.playedCards"
+      class="played-card card-size"
+      src="assets/img/playing_cards/{{ card }}.png"
+    />
+
+    <!-- -----------  TAKE CARD ANIMATION  ----------- -->
     <div *ngIf="cardPicked" class="transform__outer-container card-size">
       <div
         class="transform__inner-container card-size"
@@ -16,11 +30,18 @@
           <img class="card" src="assets/img/playing_cards/card_cover.png" />
         </div>
         <div class="card__face card-size">
-          <img class="card" src="assets/img/playing_cards/ace_1.png" />
+          <img
+            class="card"
+            src="assets/img/playing_cards/{{ currentCard }}.png"
+          />
         </div>
       </div>
     </div>
   </div>
+  <app-actions *ngIf="currentCard" [currentCard]="currentCard" class="game-actions"></app-actions>
+  <button class="btn-add" mat-fab color="primary" (click)="openDialog()">
+    <span class="material-icons"> add </span>
+  </button>
 </div>
 
 <!--     [ngStyle]="{ 'transform': 'translate(calc(-50% - ' + 5 * i + 'px), -50%)' }" -->

@@ -1,0 +1,39 @@
+.player-panel {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.player {
+  justify-content: flex-start;
+  height: 75px;
+  width: 250px;
+  /* background-color: rgba($color: #ffffff, $alpha: 0.3); */
+  box-shadow: inset 50px 0 50px rgba(255, 255, 255, 0.3);
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  margin-bottom: 10px;
+  img {
+    height: 100%;
+    transform: scaleX(-1);
+    border-radius: 50%;
+    opacity: .3;
+  }
+  span {
+    color: #899;
+    font-weight: 500;
+    font-size: 18px;
+    margin-left: 20px;
+  }
+}
+
+.player-active {
+  box-shadow: inset 50px 0 50px rgba(255, 255, 255, 0.8);
+  img{
+    opacity: 1;
+  }
+  span{
+    color: #555;
+  }
+}
