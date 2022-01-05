@@ -14,7 +14,6 @@ export class GameComponent implements OnInit {
   cardPicked = false;
   constructor(public dialog: MatDialog) {
     this.game = new Game();
-    console.log(this.game.currentPlayer);
   }
 
   ngOnInit(): void {}
