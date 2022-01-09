@@ -15,6 +15,12 @@ import {MatCardModule} from '@angular/material/card';
 import { DialogAddPlayerComponent } from './dialog-add-player/dialog-add-player.component';  
 import { FormsModule } from '@angular/forms';
 import { ActionsComponent } from './actions/actions.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 @NgModule({
   declarations: [
@@ -34,7 +40,12 @@ import { ActionsComponent } from './actions/actions.component';
     MatIconModule,
     MatDialogModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideDatabase(() => getDatabase()),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]

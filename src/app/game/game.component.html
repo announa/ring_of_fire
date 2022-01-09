@@ -11,7 +11,7 @@
     <img
       src="assets/img/playing_cards/card_cover.png"
       class="top-card card-size"
-      [class.top-card--hover]="!cardPicked"
+      [class.top-card--hover]="!game.cardPicked"
       (click)="takeCard()"
     />
     <img
@@ -21,10 +21,10 @@
     />
 
     <!-- -----------  TAKE CARD ANIMATION  ----------- -->
-    <div *ngIf="cardPicked" class="transform__outer-container card-size">
+    <div *ngIf="game.cardPicked" class="transform__outer-container card-size">
       <div
         class="transform__inner-container card-size"
-        [class.card-picked]="cardPicked"
+        [class.card-picked]="game.cardPicked"
       >
         <div class="card__cover card-size">
           <img class="card" src="assets/img/playing_cards/card_cover.png" />
@@ -32,13 +32,13 @@
         <div class="card__face card-size">
           <img
             class="card"
-            src="assets/img/playing_cards/{{ currentCard }}.png"
+            src="assets/img/playing_cards/{{ game.currentCard }}.png"
           />
         </div>
       </div>
     </div>
   </div>
-  <app-actions *ngIf="currentCard" [currentCard]="currentCard" class="game-actions"></app-actions>
+  <app-actions *ngIf="game.currentCard" [currentCard]="game.currentCard" class="game-actions"></app-actions>
   <button class="btn-add" mat-fab color="primary" (click)="openDialog()">
     <span class="material-icons"> add </span>
   </button>

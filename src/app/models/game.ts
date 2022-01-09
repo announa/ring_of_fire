@@ -1,4 +1,6 @@
 export class Game {
+  currentCard: string = '';
+  cardPicked = false;
   stack: string[] = [];
   playedCards: string[] = [];
   players: string[] = [];
@@ -10,6 +12,17 @@ export class Game {
     shuffle(this.stack);
     /* this.setPlayers(); */
     console.log(this)
+  }
+
+  public toJson(){
+    return {
+      stack: this.stack,
+      playedCards: this.playedCards,
+      players: this.players,
+      currentPlayer: this.currentPlayer,
+      cardPicked: this.cardPicked,
+      currentCard: this.currentCard
+    }
   }
 
   fillStack() {
