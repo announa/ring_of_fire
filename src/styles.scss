@@ -1,27 +1,22 @@
-*{
- margin: 0;
- box-sizing: border-box;
+* {
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.flex{
- display: flex;
- justify-content: center;
- align-items: center;
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-button{
- cursor: pointer;
+button {
+  cursor: pointer;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-@media (max-width: 850px) {
- .hide--desktop{
-   display: none;
- }
+html,
+body {
+  height: 100%;
 }
-@media (min-width: 850px) {
- .hide--mobile{
-   display: none;
- }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

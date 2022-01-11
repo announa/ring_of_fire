@@ -1,6 +1,13 @@
-<div class="player-panel">
-  <div (click)="editPlayer(i)" *ngFor="let player of game.players; let i = index" class="player flex" [class.player-active]="game.currentPlayer == i" [style.height]="game.players.length > 4? '50px': '75px'">
+<div class="hide--desktop player-panel--desktop">
+  <div (click)="editPlayer(i)" *ngFor="let player of game.players; let i = index" class="player player-desktop flex" [class.player-active]="game.currentPlayer == i" [style.height]="game.players.length > 4? '50px': '75px'">
     <img src="assets/img/profile/female.png" />
     <span>{{ player }}</span>
+  </div>
+</div>
+
+<div class="hide--mobile player-panel--mobile flex">
+  <div (click)="editPlayer(i)" *ngFor="let player of game.players; let i = index" class="player player-mobile flex" [class.player-active]="game.currentPlayer == i">
+    <span>{{ player }}</span>
+    <img src="assets/img/profile/female.png" />
   </div>
 </div>
