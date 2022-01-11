@@ -99,4 +99,8 @@ export class GameComponent implements OnInit {
       }
     });
   }
+
+  editPlayer(){
+    console.log('edit Player')
+  }
 }

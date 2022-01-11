@@ -13,4 +13,8 @@ export class PlayerComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  editPlayer(playerId: number){
+    console.log('edit Player ' + playerId)
+  }
 }

@@ -1,5 +1,5 @@
 <div class="player-panel flex">
- <div *ngFor="let player of game.players; let i = index" class="player flex" [class.player-active]="game.currentPlayer == i">
+ <div  (click)="editPlayer(i)"  *ngFor="let player of game.players; let i = index" class="player flex" [class.player-active]="game.currentPlayer == i">
   <span>{{ player }}</span>
    <img src="assets/img/profile/female.png" />
  </div>

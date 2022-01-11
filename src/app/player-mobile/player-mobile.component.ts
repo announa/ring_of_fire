@@ -14,4 +14,7 @@ export class PlayerMobileComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  editPlayer(playerId: number){
+    console.log('edit Player ' + playerId)
+  }
 }
