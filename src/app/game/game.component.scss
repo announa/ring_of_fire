@@ -1,7 +1,21 @@
 .field {
+  padding-right: 250px;
   width: 100%;
   height: 100vh;
   background: rgb(123, 203, 206);
+  background-image: url("/assets/img/table_bg_dark.jpg");
+  background-size: cover;
+  
+  
+  @media (max-width: 850px){
+    padding-right: 150px;
+    padding-top: 100px;
+  }
+  
+  
+  @media (max-width: 450px) {
+    padding-right: 100px;
+  }
 }
 
 .card-size{
@@ -11,18 +25,31 @@
 
 .stack {
   position: relative;
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 140px;
+    height: 100%;
+    border-radius: 10px;
+    z-index: 0;
+    box-shadow: 2px 2px 5px rgba($color: #000000, $alpha: 0.5);
+  }
 }
 
 .card {
   position: absolute;
   width: 120px;
+  z-index: 1;
 }
 
 .top-card {
- position: absolute;
- cursor: pointer;
- left: -20px;
- transition: all 100ms ease-in-out;
+  position: absolute;
+  cursor: pointer;
+  left: -20px;
+  transition: all 100ms ease-in-out;
+  z-index: 1;
 }
 
 .transform__outer-container{
@@ -30,6 +57,7 @@
   top: -10px;
   left: -20px;
   perspective: 500px;
+  z-index: 1;
 }
 
 .transform__inner-container{
@@ -73,6 +101,7 @@
  .card__cover, .card__face{
   position: absolute;
   backface-visibility: hidden;
+  z-index: 1;
  }
  
  .card__face{
@@ -83,7 +112,16 @@
    position: absolute;
    top: -210px;
    left: 180px;
-  transform: rotateZ(-10deg);
+   transform: rotateZ(-10deg);
+   
+/*    @media (max-width: 850px) {
+    top: -110px;
+    left: 200px;
+  } */
+  
+  @media (max-width: 450px) {
+    left: 120px;
+  }
  }
 
 .btn-add{
@@ -94,7 +132,14 @@
 
  .game-actions{
    position: absolute;
-   bottom: 50px;
-   left: 60px;
+   bottom: 30px;
+   left: 40px;
    right: 130px;
+
+   @media (max-width: 700px) {
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    min-height: 115px;
+   }
  }

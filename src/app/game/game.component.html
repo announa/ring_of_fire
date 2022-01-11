@@ -1,4 +1,5 @@
-<app-player [game]="game" class="player-panel"></app-player>
+<app-player [game]="game" class="hide--desktop"></app-player>
+<app-player-mobile [game]="game" class="player-mobile hide--mobile flex"></app-player-mobile>
 
 <div class="field flex">
   <div class="stack card-size">
@@ -6,10 +7,10 @@
       *ngFor="let c of [0, 1, 2, 3]; let i = index"
       [ngStyle]="{ 'left.px': -5 * i }"
       class="card"
-      src="assets/img/playing_cards/card_cover.png"
+      src="assets/img/playing_cards/card_cover_blue.png"
     />
     <img
-      src="assets/img/playing_cards/card_cover.png"
+      src="assets/img/playing_cards/card_cover_blue.png"
       class="top-card card-size"
       [class.top-card--hover]="!game.cardPicked"
       (click)="takeCard()"
@@ -27,7 +28,7 @@
         [class.card-picked]="game.cardPicked"
       >
         <div class="card__cover card-size">
-          <img class="card" src="assets/img/playing_cards/card_cover.png" />
+          <img class="card" src="assets/img/playing_cards/card_cover_blue.png" />
         </div>
         <div class="card__face card-size">
           <img
@@ -43,5 +44,3 @@
     <span class="material-icons"> add </span>
   </button>
 </div>
-
-<!--     [ngStyle]="{ 'transform': 'translate(calc(-50% - ' + 5 * i + 'px), -50%)' }" -->

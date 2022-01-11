@@ -9,7 +9,6 @@
   justify-content: flex-start;
   height: 75px;
   width: 250px;
-  /* background-color: rgba($color: #ffffff, $alpha: 0.3); */
   box-shadow: inset 50px 0 50px rgba(255, 255, 255, 0.3);
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
@@ -18,13 +17,17 @@
     height: 100%;
     transform: scaleX(-1);
     border-radius: 50%;
-    opacity: .3;
+    opacity: .5;
   }
   span {
-    color: #899;
+    padding-right: 10px;
+    color: #9aa;
     font-weight: 500;
     font-size: 18px;
     margin-left: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
@@ -34,6 +37,6 @@
     opacity: 1;
   }
   span{
-    color: #555;
+    color: white;
   }
 }
