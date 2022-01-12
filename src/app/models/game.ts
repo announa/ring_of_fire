@@ -3,8 +3,9 @@ export class Game {
   cardPicked = false;
   stack: string[] = [];
   playedCards: string[] = [];
-  players: string[] = [];
-  /* players: {name: string, image: string}[] = []; */
+  /* players: string[] = []; */
+  players: {name: string, image: string}[] = [];
+  profilePictures = ['female.png', 'male.jpg','cat.png', 'dog.png', 'owl.png', 'dragonfly.png', 'tiger.png', 'hummingbird.png']
   currentPlayer: number = 0;
 
   constructor() {
@@ -32,6 +33,10 @@ export class Game {
       this.stack.push(`diamonds_${i}`);
       this.stack.push(`hearts_${i}`);
     }
+  }
+
+  getProfilePicture(){
+    return Math.floor(Math.random()*(this.profilePictures.length - 1))
   }
 } 
 

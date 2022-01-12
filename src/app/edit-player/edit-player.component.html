@@ -1,1 +1,9 @@
-<p>edit-player works!</p>
+<h2>Choose your profile picture</h2>
+<div class="picture-container flex">
+  <img
+  [mat-dialog-close]="picture"
+    *ngFor="let picture of profilePictures"
+    src="assets/img/profile/{{ picture }}"
+    class="profile-picture"
+  />
+</div>

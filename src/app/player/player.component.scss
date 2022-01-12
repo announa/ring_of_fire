@@ -14,9 +14,11 @@
   cursor: pointer;
 
   img {
-    transform: scaleX(-1);
     border-radius: 50%;
     opacity: 0.5;
+    background-color: white;
+    object-fit: contain;
+    aspect-ratio: 1;
   }
   span {
     color: #9aa;

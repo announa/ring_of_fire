@@ -1,0 +1,21 @@
+.picture-container{
+ gap: 20px;
+ flex-wrap: wrap;
+ background-color: #ccc;
+ border-radius: 5px;
+ padding: 15px;
+
+}
+.profile-picture{
+ width: 75px;
+ height: 75px;
+ object-fit: contain;
+ border-radius: 50%;
+ background-color: white;
+ cursor: pointer;
+
+ &:hover{
+  filter: brightness(1.25);
+  box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.2);
+ }
+}

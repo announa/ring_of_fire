@@ -4,6 +4,7 @@ import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player
 import { Game } from '../models/game';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DatabaseSaveService } from '../database-save.service';
 
 @Component({
   selector: 'app-game',
@@ -15,10 +16,10 @@ export class GameComponent implements OnInit {
   gameId: string = '';
 
   constructor(
+    private saveToDb: DatabaseSaveService,
     private route: ActivatedRoute,
-    private router: Router,
     private firestore: AngularFirestore,
-    public dialog: MatDialog
+    public dialog: MatDialog,
   ) {
     this.game = new Game();
   }
@@ -47,12 +48,12 @@ export class GameComponent implements OnInit {
     this.game.cardPicked = game.cardPicked
   }
 
-  saveGameToDataBase(){
+ /*  saveGameToDataBase(){
     this.firestore
     .collection('games')
     .doc(this.gameId)
     .update(this.game.toJson())
-  }
+  } */
 
   takeCard() {
     this.placeCard();
@@ -68,7 +69,7 @@ export class GameComponent implements OnInit {
         console.log('No more cards in stack');
       }
       this.game.cardPicked = true;
-      this.saveGameToDataBase();
+      this.saveToDb.saveGameToDataBase(this.gameId, this.game);
     }
   }
 
@@ -77,7 +78,7 @@ export class GameComponent implements OnInit {
       this.game.playedCards.push(this.game.currentCard);
       this.game.cardPicked = false;
       this.nextPlayer();
-      this.saveGameToDataBase();
+      this.saveToDb.saveGameToDataBase(this.gameId, this.game);
     }, 700);
   }
   
@@ -94,8 +95,9 @@ export class GameComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((name: string) => {
       if (name) {
-        this.game.players.push(name);
-        this.saveGameToDataBase();
+        this.game.players.push({name: name, image: this.game.profilePictures[this.game.getProfilePicture()]});
+        /* this.game.players.push(name); */
+        this.saveToDb.saveGameToDataBase(this.gameId, this.game);
       }
     });
   }
