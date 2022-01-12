@@ -1,4 +1,6 @@
-<h2>Choose your profile picture</h2>
+<h1 mat-dialog-title>Edit Player</h1>
+<h2 mat-dialog-title>Choose your profile picture</h2>
+
 <div class="picture-container flex">
   <img
   [mat-dialog-close]="picture"
@@ -6,4 +8,8 @@
     src="assets/img/profile/{{ picture }}"
     class="profile-picture"
   />
+</div>
+<div mat-dialog-actions class="edit-profile-btns flex">
+  <button mat-button (click)="dialogRef.close()">Cancel</button>
+  <button mat-button [mat-dialog-close]="'delete'" cdkFocusInitial>Delete Player</button>
 </div>

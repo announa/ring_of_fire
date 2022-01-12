@@ -34,18 +34,26 @@ export class ActionsComponent implements OnInit, OnChanges {
       description:
         'Pick a mate. Your mate must always drink when you drink and the other way around.',
     },
-    { title: 'Thumbmaster', description: '' },
+    {
+      title: 'Thumbmaster',
+      description:
+        'All player press their thums on the table. The last player has to drink.',
+    },
     { title: 'Chicos', description: 'All men drink.' },
-    { title: 'Quizmaster', description: '' },
+    {
+      title: 'Rule',
+      description:
+        'Make a rule. Everyone needs to drink when he breaks the rule.',
+    },
     {
       title: 'Never have i ever...',
       description:
         'Say something you never did. Everyone who did it has to drink.',
     },
     {
-      title: 'Rule',
+      title: 'Question',
       description:
-        'Make a rule. Everyone needs to drink when he breaks the rule.',
+        'You have to keep asking questions to each other. It doesn\'t matter what the question is, as long as it is a question. Whoever does not say a question, drinks.',
     },
   ];
 
@@ -62,9 +70,10 @@ export class ActionsComponent implements OnInit, OnChanges {
 
   ngOnChanges(): void {
     if (this.currentCard) {
-    let cardNumber = +this.currentCard.split('_')[1];
+      let cardNumber = +this.currentCard.split('_')[1];
       this.currentAction.title = this.cardAction[cardNumber - 1].title;
-      this.currentAction.description = this.cardAction[cardNumber - 1].description;
+      this.currentAction.description =
+        this.cardAction[cardNumber - 1].description;
     }
   }
 }
