@@ -1,4 +1,4 @@
 <mat-card class="actions-card">
- <mat-card-title>{{ currentAction.title }}</mat-card-title>
- <mat-card-content>{{ currentAction.description }}</mat-card-content>
+ <mat-card-title>{{ players.length > 0? currentAction.title : 'Who will play?' }}</mat-card-title>
+ <mat-card-content>{{ players.length > 0? currentAction.description : 'Please add the players'}}</mat-card-content>
 </mat-card>

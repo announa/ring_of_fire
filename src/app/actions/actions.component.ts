@@ -63,6 +63,7 @@ export class ActionsComponent implements OnInit, OnChanges {
   };
 
   @Input() currentCard: string = '';
+  @Input() players: {name: string, image: string}[] = [];
 
   constructor() {}
 

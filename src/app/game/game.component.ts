@@ -14,6 +14,7 @@ import { DatabaseSaveService } from '../database-save.service';
 export class GameComponent implements OnInit {
   game: Game;
   gameId: string = '';
+  gameOver = false;
 
   constructor(
     private saveToDb: DatabaseSaveService,
@@ -48,16 +49,13 @@ export class GameComponent implements OnInit {
     this.game.cardPicked = game.cardPicked
   }
 
- /*  saveGameToDataBase(){
-    this.firestore
-    .collection('games')
-    .doc(this.gameId)
-    .update(this.game.toJson())
-  } */
-
   takeCard() {
+    if(this.game.players.length > 0){
     this.placeCard();
     this.finishMove();
+    } else{
+      this.highlightHint();
+    }
   }
 
   placeCard() {
@@ -67,6 +65,7 @@ export class GameComponent implements OnInit {
         this.game.currentCard = cardFace;
       } else {
         console.log('No more cards in stack');
+        this.gameOver = true;
       }
       this.game.cardPicked = true;
       this.saveToDb.saveGameToDataBase(this.gameId, this.game);
@@ -104,5 +103,9 @@ export class GameComponent implements OnInit {
 
   editPlayer(){
     console.log('edit Player')
+  }
+
+  highlightHint(){
+    console.log('Hint')
   }
 }

@@ -23,6 +23,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 /* import { PlayerMobileComponent } from './player-mobile/player-mobile.component'; */
 import { EditPlayerComponent } from './edit-player/edit-player.component';
+import { GameoverScreenComponent } from './gameover-screen/gameover-screen.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { EditPlayerComponent } from './edit-player/edit-player.component';
     DialogAddPlayerComponent,
     ActionsComponent,
     /* PlayerMobileComponent, */
-    EditPlayerComponent
+    EditPlayerComponent,
+    GameoverScreenComponent
   ],
   imports: [
     BrowserModule,
