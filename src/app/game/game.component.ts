@@ -59,16 +59,16 @@ export class GameComponent implements OnInit {
   }
 
   placeCard() {
-    if (!this.game.cardPicked) {
+    if (!this.game.cardPicked && !this.gameOver) {
       let cardFace = this.game.stack.pop();
       if (cardFace) {
         this.game.currentCard = cardFace;
-      } else {
-        console.log('No more cards in stack');
-        this.gameOver = true;
       }
       this.game.cardPicked = true;
       this.saveToDb.saveGameToDataBase(this.gameId, this.game);
+    }
+    if(this.game.stack.length == 0){
+      this.gameOver = true;
     }
   }
 
@@ -79,6 +79,7 @@ export class GameComponent implements OnInit {
       this.nextPlayer();
       this.saveToDb.saveGameToDataBase(this.gameId, this.game);
     }, 700);
+
   }
   
   nextPlayer() {
@@ -107,5 +108,9 @@ export class GameComponent implements OnInit {
 
   highlightHint(){
     console.log('Hint')
+  }
+
+  onGameOverReset(gameOverReset: boolean){
+    this.gameOver = gameOverReset;
   }
 }

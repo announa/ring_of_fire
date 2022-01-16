@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GameoverScreenComponent } from './gameover-screen.component';
+import { GameoverComponent } from './gameover.component';
 
-describe('GameoverScreenComponent', () => {
-  let component: GameoverScreenComponent;
-  let fixture: ComponentFixture<GameoverScreenComponent>;
+describe('GameoverComponent', () => {
+  let component: GameoverComponent;
+  let fixture: ComponentFixture<GameoverComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GameoverScreenComponent ]
+      declarations: [ GameoverComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GameoverScreenComponent);
+    fixture = TestBed.createComponent(GameoverComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
