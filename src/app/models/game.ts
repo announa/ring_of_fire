@@ -3,7 +3,6 @@ export class Game {
   cardPicked = false;
   stack: string[] = [];
   playedCards: string[] = [];
-  /* players: string[] = []; */
   players: {name: string, image: string}[] = [];
   profilePictures = ['female.png', 'male.jpg','cat.png', 'dog.png', 'owl.png', 'dragonfly.png', 'tiger.png', 'hummingbird.png']
   currentPlayer: number = 0;
@@ -11,7 +10,6 @@ export class Game {
   constructor() {
     this.fillStack();
     shuffle(this.stack);
-    /* this.setPlayers(); */
     console.log(this)
   }
 
@@ -27,7 +25,7 @@ export class Game {
   }
 
   fillStack() {
-    for (let i = 1; i < 2; i++) {
+    for (let i = 1; i < 14; i++) {
       this.stack.push(`ace_${i}`);
       this.stack.push(`clubs_${i}`);
       this.stack.push(`diamonds_${i}`);

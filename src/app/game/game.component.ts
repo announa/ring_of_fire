@@ -14,7 +14,8 @@ import { DatabaseSaveService } from '../database-save.service';
 export class GameComponent implements OnInit {
   game: Game;
   gameId: string = '';
-  gameOver = false;
+  gameOver: boolean = false;
+  addPlayerHint: boolean = false;
 
   constructor(
     private saveToDb: DatabaseSaveService,
@@ -107,7 +108,10 @@ export class GameComponent implements OnInit {
   }
 
   highlightHint(){
-    console.log('Hint')
+    this.addPlayerHint = true;
+    setTimeout(() => {
+      this.addPlayerHint = false;
+    }, 2100);
   }
 
   onGameOverReset(gameOverReset: boolean){

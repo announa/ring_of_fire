@@ -41,8 +41,8 @@
       </div>
     </div>
   </div>
-  <app-actions *ngIf="!gameOver && game.currentCard || game.players.length == 0" [players]="game.players" [currentCard]="game.currentCard" class="game-actions"></app-actions>
-  <button class="btn-add" mat-fab color="primary" (click)="openDialog()">
+  <app-actions *ngIf="!gameOver && game.currentCard || game.players.length == 0" [players]="game.players" [currentCard]="game.currentCard" [addPlayerHint]="addPlayerHint" class="game-actions"></app-actions>
+  <button class="btn-add" [class.btn--highlighted]="addPlayerHint" mat-fab color="primary" (click)="openDialog()">
     <span class="material-icons"> add </span>
   </button>
 </div>

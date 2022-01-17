@@ -182,3 +182,16 @@ app-player{
     justify-content: center;
   }
 }
+
+.btn--highlighted{
+  animation: btn--highlighted 700ms ease-in-out infinite;
+}
+
+@keyframes btn--highlighted {
+  80%{
+    box-shadow: 0 0 40px rgba($color: #673ab7, $alpha: 1.0);
+  }
+100%{
+    box-shadow: 0 0 0px rgba($color: #673ab7, $alpha: 1.0);
+  }
+}

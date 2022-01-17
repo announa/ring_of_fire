@@ -62,6 +62,7 @@ export class ActionsComponent implements OnInit, OnChanges {
     description: '',
   };
 
+  @Input() addPlayerHint: boolean = false;
   @Input() currentCard: string = '';
   @Input() players: {name: string, image: string}[] = [];
 
