@@ -96,6 +96,28 @@
   }
 }
 
+@media (max-width: 850px) {
+  @keyframes picked-animation {
+    20% {
+      transform: scale(1.2);
+    }
+    40% {
+      transform: rotateY(180deg) scale(1.2);
+    }
+
+    60% {
+      transform: rotateY(180deg) scale(1.2);
+      top: 0;
+      left: 0;
+    }
+    100% {
+      transform: rotateY(180deg) rotateZ(10deg);
+      top: -140px;
+      left: 200px;
+    }
+  }
+}
+
 @media (max-width: 450px) {
   @keyframes picked-animation {
     20% {
@@ -112,7 +134,7 @@
     }
     100% {
       transform: rotateY(180deg) rotateZ(10deg);
-      top: -200px;
+      top: -140px;
       left: 140px;
     }
   }
