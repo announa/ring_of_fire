@@ -29,13 +29,11 @@ export class GameComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.gameId = params['id'];
-      console.log(params['id']);
       this.firestore
         .collection('games')
         .doc(params['id'])
         .valueChanges()
         .subscribe((game) => {
-          console.log('DB: game: ', game);
           this.loadGameFromDataBase(game);
           })
         });
@@ -88,7 +86,6 @@ export class GameComponent implements OnInit {
     this.game.currentPlayer++;
     this.game.currentPlayer =
     this.game.currentPlayer % this.game.players.length;
-    console.log(this.game.currentPlayer)
   }
 
   openDialog(): void {
@@ -101,10 +98,6 @@ export class GameComponent implements OnInit {
         this.saveToDb.saveGameToDataBase(this.gameId, this.game);
       }
     });
-  }
-
-  editPlayer(){
-    console.log('edit Player')
   }
 
   highlightHint(){
