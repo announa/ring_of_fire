@@ -23,6 +23,12 @@
 
 .stack {
   position: relative;
+  margin-top: 100px;
+  
+  @media (max-width: 850px) {
+    margin-top: 40px;
+    
+  }
   &::before {
     content: "";
     position: absolute;
@@ -202,7 +208,7 @@ app-player{
     box-shadow: 0 0 50px rgba($color: #673ab7, $alpha: 1.0);
   }
 100%{
-    box-shadow: 0 0 05px rgba($color: #673ab7, $alpha: 1.0);
+    box-shadow: 0 0 0px rgba($color: #673ab7, $alpha: 1.0);
   }
 }
 
